@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!--     ขอขนาดตัว input ใหญ่ขึ้นหน่อย -->
+    <form class="main-input">
+      <lable>ID</lable>
+      <input type="text" class="bar" id="name-input" />
+      <lable>Price</lable>
+      <input type="number" class="bar" id="price-input" />
+      <lable>Amount</lable>
+      <input type="number" class="bar" id="amount-input" />
+    </form>
+    <button class="add-item-btn" id="add-item-btn">
+      <big><b>ADD</b></big>
+    </button>
+    <div class="main-cart">
+      <ul class="show-items">
+        <div>
+          <span class="item-name">name1</span>
+          <span class="item-price">price1</span>
+          <span class="item-amount">amount1</span>
+          <button class="delete-btn">Delete</button>
+        </div>
+      </ul>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

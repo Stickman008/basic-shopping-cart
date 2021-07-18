@@ -1,0 +1,32 @@
+.main-input {
+  display: inline-block;
+}
+
+.bar {
+  border-color: blue;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color: lavenderblush;
+}
+
+.add-item-btn {
+  background-color: #ffd662ff;
+  color: black;
+  padding: 3px 22px;
+  text-align: center;
+  display: inline-block;
+  border-color: lightgray;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.main-cart {
+  text-decoration: red underline;
+  text-align: left;
+  text-transform: capitalize;
+  line-height: 0;
+}
+
+.delete-btn {
+  font-weight: bold;
+}
