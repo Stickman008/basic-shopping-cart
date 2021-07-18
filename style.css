@@ -1,5 +1,5 @@
 .main-input {
-  display: inline-block;
+  font-size: 18px;
 }
 
 .bar {
@@ -7,26 +7,22 @@
   overflow: hidden;
   text-overflow: ellipsis;
   background-color: lavenderblush;
+  font-size: 15px; /* ใช่แบบนี้ปะ  input ใหญ่ขึ้น*/
 }
 
 .add-item-btn {
-  background-color: #ffd662ff;
+  background-color: #FFD662FF;
   color: black;
-  padding: 3px 22px;
-  text-align: center;
-  display: inline-block;
   border-color: lightgray;
-  margin: 5px;
   border-radius: 5px;
 }
 
-.main-cart {
-  text-decoration: red underline;
+.main-cart{
+  text-decoration: green underline;
   text-align: left;
   text-transform: capitalize;
-  line-height: 0;
 }
 
-.delete-btn {
+.delete-btn{
   font-weight: bold;
 }
