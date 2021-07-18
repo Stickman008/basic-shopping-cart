@@ -13,7 +13,7 @@ function showCart() {
 
 function main() {
     const addItemBtn = document.getElementById("add-item-btn");
-    addItemBtn.addEventListener("click", addItem);
+    addItemBtn.addEventListener("click", addItemToCart);
 }
 
 main();
