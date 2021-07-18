@@ -17,7 +17,7 @@ function addItemToCart() {
   let price = document.getElementById("price-input").value;
   let amount = document.getElementById("amount-input").value;
 
-  if(name===null||name===''||price<0||amount<=0) return 0;
+  if (name === null || name === "" || price < 0 || amount <= 0) return 0;
 
   db.collection("cart")
     .add({
@@ -35,10 +35,13 @@ function addItemToCart() {
 }
 
 function deleteItem(id) {
-  db.collection("cart").doc(id).delete().then(() => {
-    let cartRow = document.getElementById("id_"+id);
-    cartRow.remove();
-  })
+  db.collection("cart")
+    .doc(id)
+    .delete()
+    .then(() => {
+      let cartRow = document.getElementById("id_" + id);
+      cartRow.remove();
+    });
 }
 
 function renderItem(id, name, price, amount) {
@@ -51,15 +54,18 @@ function renderItem(id, name, price, amount) {
   let deleteBtn = document.createElement("button");
 
   cartRow.setAttribute("scope", "row");
-  cartRow.setAttribute("id", "id_"+id);
-  
+  cartRow.setAttribute("id", "id_" + id);
+
   itemName.setAttribute("class", "item-name");
   itemPrice.setAttribute("class", "item-price");
   itemAmount.setAttribute("class", "item-amount");
+  deleteBtn.setAttribute("class", "btn delete-btn");
+
   itemName.setAttribute("scope", "col");
   itemPrice.setAttribute("scope", "col");
   itemAmount.setAttribute("scope", "col");
-  
+  deleteBtn.setAttribute("scope", "col");
+
   itemName.innerHTML = name;
   itemPrice.innerHTML = price;
   itemAmount.innerHTML = amount;
@@ -71,7 +77,7 @@ function renderItem(id, name, price, amount) {
   cartRow.appendChild(itemPrice);
   cartRow.appendChild(itemAmount);
   cartRow.appendChild(deleteBtn);
-  
+
   cart.appendChild(cartRow);
 }
 
@@ -79,12 +85,15 @@ function renderAllItems() {
   let cart = document.getElementsByClassName("show-items-body")[0];
   cart.innerHTML = "";
 
-  db.collection("cart").orderBy("name").get().then((querySanpshot)=> {
-    querySanpshot.forEach((doc) => {
-      let data = doc.data();
-      renderItem(doc.id, data.name, data.price, data.amount);
+  db.collection("cart")
+    .orderBy("name")
+    .get()
+    .then((querySanpshot) => {
+      querySanpshot.forEach((doc) => {
+        let data = doc.data();
+        renderItem(doc.id, data.name, data.price, data.amount);
+      });
     });
-  })
 }
 
 function main() {
@@ -94,4 +103,3 @@ function main() {
 }
 
 main();
-

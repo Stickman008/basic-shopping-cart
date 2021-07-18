@@ -11,18 +11,18 @@
 }
 
 .add-item-btn {
-  background-color: #FFD662FF;
+  background-color: #ffd662ff;
   color: black;
   border-color: lightgray;
   border-radius: 5px;
 }
 
-.main-cart{
+.main-cart {
   text-decoration: green underline;
   text-align: left;
   text-transform: capitalize;
 }
 
-.delete-btn{
+.delete-btn {
   font-weight: bold;
 }
